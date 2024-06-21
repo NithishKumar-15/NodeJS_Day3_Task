@@ -2,9 +2,16 @@ import { MongoClient } from "mongodb";
 const url="localhost:27017";
 const dbName="NodeJSDay3Task";
 
-const localUrl=`mongodb://${url}`;
 
-const client=new MongoClient(localUrl);
+const dbUser="nithishkumarmurugesan2001";
+const dbPassword="tzzBUJOevjJUzjMX";
+const cluster="cluster0.yslorn1.mongodb.net";
+
+//const localUrl=`mongodb://${url}`;
+
+const cloudUrl=`mongodb+srv://${dbUser}:${dbPassword}@${cluster}/?retryWrites=true&w=majority&appName=Cluster0`;
+
+const client=new MongoClient(cloudUrl);
 
 const db=client.db(dbName);
 
